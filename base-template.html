@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{HERO_TITLE}} | {{SITE_NAME}}</title>
+<meta name="description" content="{{SITE_DESCRIPTION}}">
+<meta name="keywords" content="{{SITE_KEYWORDS}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{SITE_URL}}">
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{SITE_NAME}}">
+<meta property="og:title" content="{{HERO_TITLE}}">
+<meta property="og:description" content="{{SITE_DESCRIPTION}}">
+<meta property="og:url" content="{{SITE_URL}}">
+<meta property="og:image" content="{{SITE_URL}}images/og-image.webp">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{HERO_TITLE}}">
+<meta name="twitter:description" content="{{SITE_DESCRIPTION}}">
+<meta name="twitter:image" content="{{SITE_URL}}images/og-image.webp">
+
+<!-- Performance -->
+<link rel="preload" as="image" href="images/hero-main.webp" fetchpriority="high">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="icon" href="images/favicon.ico">
+
+<!-- JSON-LD: 1. WebSite + SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{SITE_NAME}}",
+  "url": "{{SITE_URL}}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{SITE_URL}}?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- JSON-LD: 2. Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ORG_NAME}}",
+  "url": "{{SITE_URL}}",
+  "logo": "{{SITE_LOGO_URL}}"
+}
+</script>
+
+<!-- JSON-LD: 3. ItemList (Ranking) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"{{RANK1_NAME}}","url":"{{RANK1_URL}}"},
+    {"@type":"ListItem","position":2,"name":"{{RANK2_NAME}}","url":"{{RANK2_URL}}"},
+    {"@type":"ListItem","position":3,"name":"{{RANK3_NAME}}","url":"{{RANK3_URL}}"},
+    {"@type":"ListItem","position":4,"name":"{{RANK4_NAME}}","url":"{{RANK4_URL}}"},
+    {"@type":"ListItem","position":5,"name":"{{RANK5_NAME}}","url":"{{RANK5_URL}}"}
+  ]
+}
+</script>
+
+<!-- JSON-LD: 4. Product + AggregateRating (RANK1 sample) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{RANK1_NAME}}",
+  "image": "{{RANK1_BANNER}}",
+  "description": "{{RANK1_DESC}}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{RANK1_RATING}}",
+    "reviewCount": "{{RANK1_REVIEWS}}"
+  }
+}
+</script>
+
+<!-- JSON-LD: 5. BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"ホーム","item":"{{SITE_URL}}"},
+    {"@type":"ListItem","position":2,"name":"{{HERO_TITLE}}","item":"{{SITE_URL}}"}
+  ]
+}
+</script>
+
+<!-- JSON-LD: 6. Article + SpeakableSpecification -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{HERO_TITLE}}",
+  "image": "{{SITE_URL}}images/hero-main.webp",
+  "datePublished": "{{PUBLISH_DATE}}",
+  "dateModified": "{{MODIFIED_DATE}}",
+  "author": {"@type":"Organization","name":"{{ORG_NAME}}"},
+  "publisher": {
+    "@type":"Organization",
+    "name":"{{ORG_NAME}}",
+    "logo":{"@type":"ImageObject","url":"{{SITE_LOGO_URL}}"}
+  },
+  "speakable": {
+    "@type":"SpeakableSpecification",
+    "cssSelector":[".hero-title",".hero-sub"]
+  }
+}
+</script>
+
+<!-- JSON-LD: 7. WebPage + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"{{FAQ1_Q}}","acceptedAnswer":{"@type":"Answer","text":"{{FAQ1_A}}"}},
+    {"@type":"Question","name":"{{FAQ2_Q}}","acceptedAnswer":{"@type":"Answer","text":"{{FAQ2_A}}"}},
+    {"@type":"Question","name":"{{FAQ3_Q}}","acceptedAnswer":{"@type":"Answer","text":"{{FAQ3_A}}"}},
+    {"@type":"Question","name":"{{FAQ4_Q}}","acceptedAnswer":{"@type":"Answer","text":"{{FAQ4_A}}"}},
+    {"@type":"Question","name":"{{FAQ5_Q}}","acceptedAnswer":{"@type":"Answer","text":"{{FAQ5_A}}"}}
+  ]
+}
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{GTM_ID}}');</script>
+</head>
+
+<body>
+<!-- 広告開示バー -->
+<div class="ad-disclosure">【広告・PR】当サイトには広告が含まれます。</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{SITE_URL}}" class="logo"><img src="{{SITE_LOGO_URL}}" alt="{{SITE_NAME}}" width="180" height="48"></a>
+    <nav class="global-nav">
+      <a href="#ranking">ランキング</a>
+      <a href="#comparison">比較表</a>
+      <a href="#usecase">用途別</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="{{HERO_CTA_PRIMARY_URL}}" class="btn btn-cta-sm">{{HERO_CTA_PRIMARY}}</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-title">{{HERO_TITLE}}</h1>
+      <p class="hero-sub">{{HERO_SUB}}</p>
+      <div class="hero-cta">
+        <a href="{{HERO_CTA_PRIMARY_URL}}" class="btn btn-primary">{{HERO_CTA_PRIMARY}}</a>
+        <a href="{{HERO_CTA_SECONDARY_URL}}" class="btn btn-secondary">{{HERO_CTA_SECONDARY}}</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="images/hero-main.webp" alt="{{HERO_TITLE}}" width="600" height="400" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- アクションバー -->
+<section class="action-bar">
+  <div class="container">
+    <p class="action-bar-text">{{ACTION_BAR_TEXT}}</p>
+    <a href="{{HERO_CTA_PRIMARY_URL}}" class="btn btn-action">{{HERO_CTA_PRIMARY}}</a>
+  </div>
+</section>
+
+<!-- Ranking -->
+<section id="ranking" class="ranking">
+  <div class="container">
+    <h2 class="section-title">おすすめランキング TOP5</h2>
+
+    <!-- Card 1 -->
+    <article class="rank-card rank-1">
+      <div class="rank-badge"><img src="images/rank-1.webp" alt="1位" width="80" height="80"></div>
+      <div class="rank-body">
+        <a href="{{RANK1_URL}}" class="rank-banner"><img src="{{RANK1_BANNER}}" alt="{{RANK1_NAME}}" width="600" height="300"></a>
+        <h3 class="rank-name">{{RANK1_NAME}}</h3>
+        <ul class="rank-spec">
+          <li>買取率: <strong>{{RANK1_RATE}}</strong></li>
+          <li>限度額: <strong>{{RANK1_LIMIT}}</strong></li>
+          <li>入金速度: <strong>{{RANK1_SPEED}}</strong></li>
+        </ul>
+        <p class="rank-desc">{{RANK1_DESC}}</p>
+        <a href="{{RANK1_URL}}" class="btn btn-primary btn-block">公式サイトを見る</a>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="rank-card rank-2">
+      <div class="rank-badge"><img src="images/rank-2.webp" alt="2位" width="80" height="80"></div>
+      <div class="rank-body">
+        <a href="{{RANK2_URL}}" class="rank-banner"><img src="{{RANK2_BANNER}}" alt="{{RANK2_NAME}}" width="600" height="300"></a>
+        <h3 class="rank-name">{{RANK2_NAME}}</h3>
+        <ul class="rank-spec">
+          <li>買取率: <strong>{{RANK2_RATE}}</strong></li>
+          <li>限度額: <strong>{{RANK2_LIMIT}}</strong></li>
+          <li>入金速度: <strong>{{RANK2_SPEED}}</strong></li>
+        </ul>
+        <p class="rank-desc">{{RANK2_DESC}}</p>
+        <a href="{{RANK2_URL}}" class="btn btn-primary btn-block">公式サイトを見る</a>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="rank-card rank-3">
+      <div class="rank-badge"><img src="images/rank-3.webp" alt="3位" width="80" height="80"></div>
+      <div class="rank-body">
+        <a href="{{RANK3_URL}}" class="rank-banner"><img src="{{RANK3_BANNER}}" alt="{{RANK3_NAME}}" width="600" height="300"></a>
+        <h3 class="rank-name">{{RANK3_NAME}}</h3>
+        <ul class="rank-spec">
+          <li>買取率: <strong>{{RANK3_RATE}}</strong></li>
+          <li>限度額: <strong>{{RANK3_LIMIT}}</strong></li>
+          <li>入金速度: <strong>{{RANK3_SPEED}}</strong></li>
+        </ul>
+        <p class="rank-desc">{{RANK3_DESC}}</p>
+        <a href="{{RANK3_URL}}" class="btn btn-primary btn-block">公式サイトを見る</a>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="rank-card rank-4">
+      <div class="rank-badge"><img src="images/rank-4.webp" alt="4位" width="80" height="80"></div>
+      <div class="rank-body">
+        <a href="{{RANK4_URL}}" class="rank-banner"><img src="{{RANK4_BANNER}}" alt="{{RANK4_NAME}}" width="600" height="300"></a>
+        <h3 class="rank-name">{{RANK4_NAME}}</h3>
+        <ul class="rank-spec">
+          <li>買取率: <strong>{{RANK4_RATE}}</strong></li>
+          <li>限度額: <strong>{{RANK4_LIMIT}}</strong></li>
+          <li>入金速度: <strong>{{RANK4_SPEED}}</strong></li>
+        </ul>
+        <p class="rank-desc">{{RANK4_DESC}}</p>
+        <a href="{{RANK4_URL}}" class="btn btn-primary btn-block">公式サイトを見る</a>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="rank-card rank-5">
+      <div class="rank-badge"><img src="images/rank-5.webp" alt="5位" width="80" height="80"></div>
+      <div class="rank-body">
+        <a href="{{RANK5_URL}}" class="rank-banner"><img src="{{RANK5_BANNER}}" alt="{{RANK5_NAME}}" width="600" height="300"></a>
+        <h3 class="rank-name">{{RANK5_NAME}}</h3>
+        <ul class="rank-spec">
+          <li>買取率: <strong>{{RANK5_RATE}}</strong></li>
+          <li>限度額: <strong>{{RANK5_LIMIT}}</strong></li>
+          <li>入金速度: <strong>{{RANK5_SPEED}}</strong></li>
+        </ul>
+        <p class="rank-desc">{{RANK5_DESC}}</p>
+        <a href="{{RANK5_URL}}" class="btn btn-primary btn-block">公式サイトを見る</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section id="comparison" class="comparison">
+  <div class="container">
+    <h2 class="section-title">比較表</h2>
+    <div class="table-scroll">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>順位</th><th>サービス名</th><th>買取率</th><th>限度額</th><th>入金速度</th><th>申込</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-highlight"><td>1</td><td>{{RANK1_NAME}}</td><td>{{RANK1_RATE}}</td><td>{{RANK1_LIMIT}}</td><td>{{RANK1_SPEED}}</td><td><a href="{{RANK1_URL}}" class="btn btn-sm">申込</a></td></tr>
+          <tr><td>2</td><td>{{RANK2_NAME}}</td><td>{{RANK2_RATE}}</td><td>{{RANK2_LIMIT}}</td><td>{{RANK2_SPEED}}</td><td><a href="{{RANK2_URL}}" class="btn btn-sm">申込</a></td></tr>
+          <tr><td>3</td><td>{{RANK3_NAME}}</td><td>{{RANK3_RATE}}</td><td>{{RANK3_LIMIT}}</td><td>{{RANK3_SPEED}}</td><td><a href="{{RANK3_URL}}" class="btn btn-sm">申込</a></td></tr>
+          <tr><td>4</td><td>{{RANK4_NAME}}</td><td>{{RANK4_RATE}}</td><td>{{RANK4_LIMIT}}</td><td>{{RANK4_SPEED}}</td><td><a href="{{RANK4_URL}}" class="btn btn-sm">申込</a></td></tr>
+          <tr><td>5</td><td>{{RANK5_NAME}}</td><td>{{RANK5_RATE}}</td><td>{{RANK5_LIMIT}}</td><td>{{RANK5_SPEED}}</td><td><a href="{{RANK5_URL}}" class="btn btn-sm">申込</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Use Case -->
+<section id="usecase" class="usecase">
+  <div class="container">
+    <h2 class="section-title">用途別おすすめ</h2>
+    <div class="usecase-grid">
+      <div class="usecase-card"><h3>{{USECASE1_TITLE}}</h3><p>{{USECASE1_DESC}}</p><a href="{{USECASE1_URL}}" class="btn btn-secondary">詳細を見る</a></div>
+      <div class="usecase-card"><h3>{{USECASE2_TITLE}}</h3><p>{{USECASE2_DESC}}</p><a href="{{USECASE2_URL}}" class="btn btn-secondary">詳細を見る</a></div>
+      <div class="usecase-card"><h3>{{USECASE3_TITLE}}</h3><p>{{USECASE3_DESC}}</p><a href="{{USECASE3_URL}}" class="btn btn-secondary">詳細を見る</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Safety / How to choose -->
+<section class="safety">
+  <div class="container">
+    <h2 class="section-title">安全性と選び方</h2>
+    <div class="safety-content">
+      <h3>{{SAFETY_HEADING_1}}</h3>
+      <p>{{SAFETY_BODY_1}}</p>
+      <h3>{{SAFETY_HEADING_2}}</h3>
+      <p>{{SAFETY_BODY_2}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="container">
+    <h2 class="section-title">よくある質問</h2>
+    <details class="faq-item"><summary>{{FAQ1_Q}}</summary><p>{{FAQ1_A}}</p></details>
+    <details class="faq-item"><summary>{{FAQ2_Q}}</summary><p>{{FAQ2_A}}</p></details>
+    <details class="faq-item"><summary>{{FAQ3_Q}}</summary><p>{{FAQ3_A}}</p></details>
+    <details class="faq-item"><summary>{{FAQ4_Q}}</summary><p>{{FAQ4_A}}</p></details>
+    <details class="faq-item"><summary>{{FAQ5_Q}}</summary><p>{{FAQ5_A}}</p></details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav">{{FOOTER_LINKS}}</nav>
+    <p class="copyright">{{COPYRIGHT}}</p>
+  </div>
+</footer>
+
+</body>
+</html>
