@@ -70,8 +70,10 @@ section{padding:56px 0}
 .product-name{font-size:17px;font-weight:700;margin:0 0 8px;color:#9a3412}
 .product-rating{color:#f59e0b;font-weight:700;margin-bottom:8px;font-size:14px}
 .product-desc{font-size:14px;color:var(--muted);margin:0 0 14px;line-height:1.7}
-.rank-card{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;background:#fff;border:2px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px;word-break:keep-all;overflow-wrap:normal}
-.rank-card>div{min-width:0}
+.rank-card{display:flex;gap:20px;background:#fff;border:2px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.rank-card>.rank-badge{flex:0 0 80px}
+.rank-card>div:not(.rank-badge){flex:1 1 auto;min-width:0;word-break:normal;overflow-wrap:break-word}
+.rank-card .rank-name{white-space:normal;word-break:normal;overflow-wrap:break-word}
 .rank-card.rank-1{border-color:#f59e0b;background:linear-gradient(135deg,#fffbeb,#fff)}
 .rank-badge{font-size:32px;font-weight:900;color:var(--primary);text-align:center;align-self:start}
 .rank-name{font-size:19px;margin:0 0 8px;color:#9a3412}
